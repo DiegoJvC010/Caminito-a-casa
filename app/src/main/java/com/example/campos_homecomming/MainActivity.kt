@@ -3,45 +3,46 @@ package com.example.campos_homecomming
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.campos_homecomming.ui.theme.CamposhomecommingTheme
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import com.example.rutas.ui.MapScreen
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
-            CamposhomecommingTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+            Scaffold(
+                topBar = { TopAppBar() }
+            ) { innerPadding ->
+                Box(modifier = Modifier.padding(innerPadding)) {
+                    MapScreen()
                 }
             }
         }
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
+fun TopAppBar() {
+    //Barra de aplicaciones centrada usando CenterAlignedTopAppBar
+    CenterAlignedTopAppBar(
+        title = {
+            //Define el tÃtulo de la barra superior
+            Text(
+                "Caminito a la casa", //Texto del titulo
+                color = Color.White, //Color del texto
+                //Estilo del texto con negrita
+                style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold)
+            )
+        },
+        colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+            containerColor = Color.Black //Color de fondo de la topBar
+        )
     )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    CamposhomecommingTheme {
-        Greeting("Android")
-    }
 }
