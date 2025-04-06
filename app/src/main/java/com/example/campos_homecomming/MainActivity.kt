@@ -9,7 +9,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import com.example.rutas.ui.MapScreen
+import com.example.campos_homecomming.ui.MapScreen
 
 class MainActivity : ComponentActivity() {
 

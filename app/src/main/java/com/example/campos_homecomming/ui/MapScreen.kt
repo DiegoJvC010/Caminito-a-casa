@@ -1,6 +1,5 @@
 package com.example.campos_homecomming.ui
 
-
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
@@ -27,9 +26,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
-import com.example.rutas.R
-import com.example.rutas.data.DirectionsRepository
-import com.example.rutas.data.LocationManager
+import com.example.campos_homecomming.R
+import com.example.campos_homecomming.data.DirectionsRepository
+import com.example.campos_homecomming.data.LocationManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
